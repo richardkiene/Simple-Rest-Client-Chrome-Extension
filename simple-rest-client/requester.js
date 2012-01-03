@@ -142,6 +142,12 @@ function readResponse() {
       $.chili.options.automatic.active = false;
       $.chili.options.decoration.lineNumbers = false;
       var $chili = $('#codeData').chili();
+
+	  var stringIds = this.getResponseHeader('X-MiniProfiler-Ids');
+		if (stringIds) {
+			var ids = typeof JSON != 'undefined' ? JSON.parse(stringIds) : eval(stringIds);
+			MiniProfiler.fetchResultsExposed(ids);
+		}
     }
     catch(e) {
       $("#responseStatus").html("No response.");

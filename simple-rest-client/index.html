@@ -5,6 +5,7 @@
     <title>Simple REST Client</title>
     <link rel="stylesheet" type="text/css" href="reset.min.css" />
     <link rel="stylesheet" type="text/css" href="style.css" />
+	<link rel="stylesheet" type="text/css" href="http://internal.faithlife.com/mini-profiler-includes.css?v=1.9.0.0">
     <script type="text/javascript" src="jquery.min.js"></script>
     <script type="text/javascript">
     //<![CDATA[
@@ -15,6 +16,8 @@
     </script>
     <script type="text/javascript" src="jquery.chili.min.js"></script>
     <script type="text/javascript" src="jquery.chili.recipes.js"></script>
+    <script type="text/javascript" src="http://internal.faithlife.com/mini-profiler-jquery.tmpl.beta1.js"></script>
+    <script type="text/javascript" src="http://internal.faithlife.com/mini-profiler-includes.js?v=1.9.0.0"></script>
     <script type="text/javascript" src="requester.js"></script>
   </head>
   <body>
@@ -84,4 +87,17 @@
   <script text="text/javascript">
     $(":input:first").focus();  
   </script>
+  <script>
+		$(function () {
+			MiniProfiler.init({
+				ids: [],
+				path: 'http://internal.services.logos.com/accounts/v1/',
+				version: '1.9.0.0',
+				renderPosition: 'right',
+				showTrivial: false,
+				showChildrenTime: false,
+				maxTracesToShow: 15
+			});
+		});
+		</script>
 </html>
